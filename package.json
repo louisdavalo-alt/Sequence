@@ -1,0 +1,46 @@
+{
+  "name": "sequence-atelier-scenario",
+  "productName": "Séquence — Atelier de scénario",
+  "version": "1.0.0",
+  "description": "Atelier de scénario pour l'écriture de scripts, plans de scènes, storyboard et personnages.",
+  "main": "main.js",
+  "author": "Séquence",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis portable --x64",
+    "dist:win-dir": "electron-builder --win dir --x64"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.sequence.atelierscenario",
+    "productName": "Séquence",
+    "files": [
+      "main.js",
+      "preload.js",
+      "app/**/*"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Séquence"
+    }
+  }
+}

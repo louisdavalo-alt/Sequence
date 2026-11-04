@@ -1,0 +1,10 @@
+# Normalise les fins de ligne (évite les diffs parasites Windows/Mac/Linux)
+* text=auto eol=lf
+
+# Fichiers binaires : ne jamais modifier
+*.png binary
+*.ico binary
+*.exe binary
+
+# Librairies tierces minifiées : exclues des statistiques de langage GitHub
+app/vendor/** linguist-vendored
